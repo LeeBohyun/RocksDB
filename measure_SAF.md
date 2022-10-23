@@ -59,7 +59,7 @@ Level    Files   Size     Score Read(GB)  Rn(GB) Rnp1(GB) Write(GB) Wnew(GB) Mov
  ...
 ```
 
-Space amplification = (L1 + L2) / L2
+Space amplification = (L1 size + L2 size) / L2 size
 
 
 # References
