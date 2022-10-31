@@ -10,7 +10,7 @@ This week, we are going to calculate space amplification in RocksDB by running d
 ### 1. Run DB_Bench
 ```bash
 ./db_bench --benchmarks="readrandomwriterandom" \
-        -db="/home/mijin/swe3033/rocksdb-data" \
+        -db="/home/lbh/rocksdb-data" \
         -use_direct_io_for_flush_and_compaction=true \
         -use_direct_reads=true \
         -target_file_size_base=2097152 \
@@ -23,7 +23,7 @@ This week, we are going to calculate space amplification in RocksDB by running d
         -stats_interval_seconds=10 2>&1 | tee result.txt
 ```
 - `--benchmarks="readrandomwriterandom"`: 1 writer, N threads doing random reads
-- `-db="/home/mijin/backup/rocksdb-data"`: The path of RocksDB data directory
+- `-db="/home/lbh/rocksdb-data"`: The path of RocksDB data directory
 - `-use_direct_io_for_flush_and_compaction=true`: Use O_DIRECT for background flush and compaction I/O
 - `-use_direct_reads=true`: Use O_DIRECT for reading data
 - `-compaction_style=0`: style of compaction; level-based (0), universal(1)
@@ -43,7 +43,7 @@ This week, we are going to calculate space amplification in RocksDB by running d
 
 > I recommend to run the benchmark until the level increases more than **2**.
 
-In the RocksDB log file, you can get the below stat:
+In the RocksDB ```LOG``` file, you can get the below stat:
 
 ```bash
 $ vim /path/to/rocksdb-data
