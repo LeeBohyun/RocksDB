@@ -1,4 +1,6 @@
-# ZNS DB_bench Settings
+# ZNS 
+
+##DB_bench Settings
 
 ```bash
 
@@ -13,4 +15,9 @@ sudo ./db_bench --fs_uri=zenfs://dev:nvme2n1 --benchmarks=fillrandom \
        -stats_dump_period_sec=30 \
        -duration=1800 \
        -stats_interval_seconds=10 2>&1 | sudo tee result.txt
+```
+
+## blktrace
+```bash
+blktrace -d /dev/sda -o - | blkparse -i | tee blktrace.txt
 ```
